@@ -60,10 +60,10 @@ def dump_lm(lm_dict, outfile):
     pickle.dump(lm_dict, open(outfile, 'wb'))
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='Efficient probabalistic language model (unsmoothed).')
+    parser = argparse.ArgumentParser(description='Efficient probabalistic language model (unsmoothed).\n Eg. $ python languagemodel.py -o model samp')
 
     parser.add_argument("-v", "--verbose", help="turns on verbose mode.", action="store_true")
-    parser.add_argument("inputfile", help="text input file", action="store")
+    parser.add_argument("inputfile", help="text input file with one sentence per line (see file samp for example)", action="store")
     parser.add_argument("-o", "--output", help="output model file. prints to stdout if unspecified.", action="store")
     #TODO: Add options for different estimator implementations.
     args = parser.parse_args()
